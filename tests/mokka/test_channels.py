@@ -28,6 +28,8 @@ P_input_lin = 10 ** ((P_input - 30) / 10)  # W
 padding = 1000
 
 
+
+
 def test_awgn():
     channel = channels.ComplexAWGN()
     sigma = torch.tensor(0.1)
@@ -124,3 +126,6 @@ def test_SSFM_dualpol():
     y1, y2 = channel(x1, x2)
     assert len(y1) == num_samples
     assert len(y2) == num_samples
+
+
+test_SSFM_singlepol()
